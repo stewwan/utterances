@@ -233,7 +233,7 @@ exports.pageAttributes = readPageAttributes();
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.UTTERANCES_API = "https://stewan.azurewebsites.net";
+exports.UTTERANCES_API = "https://api.utteranc.es";
 },{}],"oauth.ts":[function(require,module,exports) {
 "use strict";
 
@@ -794,11 +794,11 @@ var TimelineComponent = function () {
     this.issue = issue;
     this.timeline = [];
     this.count = 0;
-    this.element = document.createElement('main');
-    this.element.classList.add('timeline');
-    this.element.innerHTML = "\n      <h1 class=\"timeline-header\">\n        <a class=\"text-link\" target=\"_blank\"></a>\n        <em>\n          - powered by\n          <a class=\"text-link\" href=\"https://utteranc.es\" target=\"_blank\">utteranc.es</a>\n        </em>\n      </h1>";
+    this.element = document.createElement("main");
+    this.element.classList.add("timeline");
+    this.element.innerHTML = "\n      <h1 class=\"timeline-header\">\n        <a class=\"text-link\" target=\"_blank\"></a>\n      </h1>";
     this.countAnchor = this.element.firstElementChild.firstElementChild;
-    this.marker = document.createComment('marker');
+    this.marker = document.createComment("marker");
     this.element.appendChild(this.marker);
     this.setIssue(this.issue);
     this.renderCount();
@@ -821,7 +821,7 @@ var TimelineComponent = function () {
     if (issue) {
       this.countAnchor.href = issue.html_url;
     } else {
-      this.countAnchor.removeAttribute('href');
+      this.countAnchor.removeAttribute("href");
     }
   };
 
@@ -835,7 +835,7 @@ var TimelineComponent = function () {
   };
 
   TimelineComponent.prototype.renderCount = function () {
-    this.countAnchor.textContent = this.count + " Comment" + (this.count === 1 ? '' : 's');
+    this.countAnchor.textContent = this.count + " Comment" + (this.count === 1 ? "" : "s");
   };
 
   return TimelineComponent;
